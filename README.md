@@ -27,7 +27,7 @@ delete a past emotion.
 -----------------------------------------------------------------------------------------
 Assignment part 1 video deliverable link: https://youtu.be/foJ1C_RSjWI
 
-##References
+## References
 lonelyTwitter, Nathan Klapstein, https://github.com/nklapste/lonelyTwitter
 Android Date Time Picker Dialog,  ANUPAM CHUGH, https://www.journaldev.com/9976/android-date-time-picker-dialog
 

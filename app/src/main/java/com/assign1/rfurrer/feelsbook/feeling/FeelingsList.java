@@ -15,6 +15,7 @@ import java.util.Map;
 
 public class FeelingsList extends ArrayList<Mood> {
 
+    //stores the number of each class present in the arraylist
     private HashMap<Class, Integer> feelingCounts = new HashMap<Class, Integer>() {{
         put(Anger.class, 0);
         put(Joy.class, 0);
@@ -24,6 +25,7 @@ public class FeelingsList extends ArrayList<Mood> {
         put(Love.class, 0);
     }};
 
+    //overrided add and remove to force sorted and keep track of counts
     @Override
     public Mood remove(int index) {
         Mood m = super.get(index);

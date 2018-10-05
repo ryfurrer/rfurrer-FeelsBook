@@ -1,3 +1,9 @@
+/**
+ * love, joy, surprise, anger, sadness, and fear are things and as such they were made into
+ * classes.
+ * they have a superclass since they all fall under feelings
+ *
+ */
 package com.assign1.rfurrer.feelsbook.feeling;
 
 import android.os.Parcel;

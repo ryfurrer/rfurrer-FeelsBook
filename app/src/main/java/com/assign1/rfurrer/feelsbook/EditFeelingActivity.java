@@ -1,7 +1,8 @@
 /*
 Each class must contain comments describing its purpose, design rationale, and any outstanding issues.
 EditFeelingActivity is a screen of the app. It has a view and controllers to display functionality
-for editing moods.
+for editing moods. It's missing the ability to edit the seconds in a time but the use-case doesn't
+really call for that specificity.
 
 It's purpose is to be the gui for this.
 

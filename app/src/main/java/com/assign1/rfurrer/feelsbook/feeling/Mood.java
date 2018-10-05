@@ -1,4 +1,8 @@
 /*
+Mood is an abstract class that allows all the emotions we use to inhert functions and operate in
+similar manners.
+
+All our emotions will be cast as moods.
 
 Parcelable code based on Understanding Androids Parcelable - Tutorial, Lars Vogel,
 http://www.vogella.com/tutorials/AndroidParcelable/article.html
@@ -31,11 +35,13 @@ public abstract class Mood implements Comparable<Mood>, Parcelable {
     private Date date;
     private String comment;
 
+    //constructor
     public Mood() {
         this.date = new Date();
         comment = "";
     }
 
+    //constructor (messages must be less than MAX_CHARS length)
     public Mood(String message) throws CommentTooLongException {
         this.date = new Date();
         Log.d(message.length()+"", "Mood: " + message);
@@ -46,6 +52,7 @@ public abstract class Mood implements Comparable<Mood>, Parcelable {
         }
     }
 
+    //constructor for when parcelized
     public Mood(Parcel in) {
         try {
             this.comment = in.readString();
@@ -61,6 +68,7 @@ public abstract class Mood implements Comparable<Mood>, Parcelable {
         dest.writeString(dateFormat.format(date));
     }
 
+    // necessary function for Parcelable
     @Override
     public int describeContents() {
         return 0;
@@ -71,7 +79,6 @@ public abstract class Mood implements Comparable<Mood>, Parcelable {
     }
 
     public void setDate(String dateText) {
-        Log.d(dateText, "setDate: ");
         try {
             this.date = dateFormat.parse(dateText);
         } catch (ParseException e) {
@@ -84,7 +91,6 @@ public abstract class Mood implements Comparable<Mood>, Parcelable {
     }
 
     public void setComment(String comment) throws CommentTooLongException {
-        Log.d(comment.length()+"", "Mood: " + comment);
         if (comment.length() <= this.MAX_CHARS ) {
             this.comment = comment;
         } else {

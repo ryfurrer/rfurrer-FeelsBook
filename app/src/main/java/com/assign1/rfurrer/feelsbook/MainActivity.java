@@ -162,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
         FeelingsPreferencesManager.saveFeelings(getApplicationContext(), feelings);
     }
 
+    //gets the results of the editFeelingActivity and implements the cha
     protected void onActivityResult (int requestCode, int resultCode, Intent intent) {
         Bundle data = intent.getExtras();
         if(requestCode == EditFeelingActivity.id) {

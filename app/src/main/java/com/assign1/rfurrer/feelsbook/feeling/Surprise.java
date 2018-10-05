@@ -15,7 +15,7 @@ public class Surprise extends Mood {
     }
 
     String format() {
-        return state;
+        return state + '\n' + super.getComment();
     }
 
     public static final Creator<Mood> CREATOR = new Creator<Mood>() {

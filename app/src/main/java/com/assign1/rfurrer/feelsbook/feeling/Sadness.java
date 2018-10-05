@@ -27,7 +27,7 @@ public class Sadness extends Mood {
     };
 
     String format() {
-        return state;
+        return state + '\n' + super.getComment();
     }
 
     @Override

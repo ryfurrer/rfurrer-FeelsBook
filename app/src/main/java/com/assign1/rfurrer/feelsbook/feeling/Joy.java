@@ -32,7 +32,7 @@ public class Joy extends Mood{
     };
 
     String format() {
-        return state;
+        return state + '\n' + super.getComment();
     }
 
     @Override

@@ -1,3 +1,10 @@
+/*
+Uses date time dialog code from
+Android Date Time Picker Dialog,  ANUPAM CHUGH,
+https://www.journaldev.com/9976/android-date-time-picker-dialog
+ */
+
+
 package com.assign1.rfurrer.feelsbook;
 
 import android.app.DatePickerDialog;
@@ -97,7 +104,7 @@ public class EditFeelingActivity extends AppCompatActivity {
             }
         });
 
-        //todo cite https://www.journaldev.com/9976/android-date-time-picker-dialog
+        //code from https://www.journaldev.com/9976/android-date-time-picker-dialog
         timeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,7 +133,7 @@ public class EditFeelingActivity extends AppCompatActivity {
             }
         });
 
-        //todo cite https://www.journaldev.com/9976/android-date-time-picker-dialog
+        //code from https://www.journaldev.com/9976/android-date-time-picker-dialog
         dateButton.setOnClickListener(new View.OnClickListener()  {
             @Override
             public void onClick(View v) {

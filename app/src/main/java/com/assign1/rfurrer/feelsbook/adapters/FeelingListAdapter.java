@@ -1,3 +1,9 @@
+/*
+
+Adapted from https://github.com/nklapste/lonelyTwitter/blob/feature/lab4/app/src/main/java/ca/ualberta/cs/lonelytwitter/TweetAdapter.java
+(Nathan klapstein - lonelyTwitter)
+ */
+
 package com.assign1.rfurrer.feelsbook.adapters;
 
 import android.content.Context;
@@ -14,7 +20,7 @@ import com.assign1.rfurrer.feelsbook.feeling.FeelingsList;
 import com.assign1.rfurrer.feelsbook.feeling.Mood;
 
 
-//https://github.com/nklapste/lonelyTwitter/blob/feature/lab4/app/src/main/java/ca/ualberta/cs/lonelytwitter/TweetAdapter.java
+
 public class FeelingListAdapter extends ArrayAdapter<Mood> {
 
     FeelingsList fl;

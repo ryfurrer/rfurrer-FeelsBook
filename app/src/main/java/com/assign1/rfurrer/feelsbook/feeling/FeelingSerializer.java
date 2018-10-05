@@ -1,3 +1,9 @@
+/*
+
+Adapted from https://github.com/nklapste/lonelyTwitter/blob/9f8f86354105bc7719a90ffa2ab0325e9d369c84/app/src/main/java/ca/ualberta/cs/lonelytwitter/TweetSerializer.java
+(Nathan klapstein - lonelyTwitter)
+ */
+
 package com.assign1.rfurrer.feelsbook.feeling;
 
 import com.google.gson.JsonDeserializationContext;
@@ -12,8 +18,6 @@ import com.google.gson.JsonSerializer;
 import java.lang.reflect.Type;
 
 //Add-in to allow GSON/JSON Serializing of the abstract class Mood and its subclasses.
-// TODO: cite nathan
-//https://github.com/nklapste/lonelyTwitter/blob/9f8f86354105bc7719a90ffa2ab0325e9d369c84/app/src/main/java/ca/ualberta/cs/lonelytwitter/TweetSerializer.java
 public class FeelingSerializer implements JsonSerializer<Mood>, JsonDeserializer<Mood> {
 
     /**

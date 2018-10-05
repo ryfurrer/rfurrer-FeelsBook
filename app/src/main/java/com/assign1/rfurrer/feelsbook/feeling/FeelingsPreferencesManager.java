@@ -1,3 +1,9 @@
+/*
+
+Adapted from https://github.com/nklapste/lonelyTwitter/blob/9f8f86354105bc7719a90ffa2ab0325e9d369c84/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterPreferencesManager.java
+(Nathan klapstein - lonelyTwitter)
+ */
+
 package com.assign1.rfurrer.feelsbook.feeling;
 
 
@@ -6,11 +12,9 @@ import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 
-//https://github.com/nklapste/lonelyTwitter/blob/9f8f86354105bc7719a90ffa2ab0325e9d369c84/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterPreferencesManager.java
 public class FeelingsPreferencesManager {
     private static final String NAME = "feelingsList";
     private static final String GSON_KEY = "feelingsListGson";

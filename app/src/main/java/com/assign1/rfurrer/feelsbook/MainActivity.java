@@ -1,23 +1,24 @@
+/*
+
+AlertDialog code based from https://developer.android.com/reference/android/app/AlertDialog
+ */
+
+
 package com.assign1.rfurrer.feelsbook;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.assign1.rfurrer.feelsbook.adapters.FeelingListAdapter;
 import com.assign1.rfurrer.feelsbook.feeling.Anger;
 import com.assign1.rfurrer.feelsbook.feeling.Fear;
-import com.assign1.rfurrer.feelsbook.feeling.FeelingSerializer;
 import com.assign1.rfurrer.feelsbook.feeling.FeelingsList;
 import com.assign1.rfurrer.feelsbook.feeling.FeelingsPreferencesManager;
 import com.assign1.rfurrer.feelsbook.feeling.Joy;
@@ -26,10 +27,8 @@ import com.assign1.rfurrer.feelsbook.feeling.Mood;
 import com.assign1.rfurrer.feelsbook.feeling.Sadness;
 import com.assign1.rfurrer.feelsbook.feeling.Surprise;
 
-import java.util.ArrayList;
 
 
-//todo cite https://developer.android.com/reference/android/app/AlertDialog
 public class MainActivity extends AppCompatActivity {
 
     private FeelingsList feelings = new FeelingsList();

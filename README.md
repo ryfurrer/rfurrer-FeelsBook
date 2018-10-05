@@ -28,8 +28,10 @@ delete a past emotion.
 Assignment part 1 video deliverable link: https://youtu.be/foJ1C_RSjWI
 
 ## References
-lonelyTwitter, Nathan Klapstein, https://github.com/nklapste/lonelyTwitter
-Android Date Time Picker Dialog,  ANUPAM CHUGH, https://www.journaldev.com/9976/android-date-time-picker-dialog
+lonelyTwitter, Nathan Klapstein, 2018, https://github.com/nklapste/lonelyTwitter
 
-Understanding Androids Parcelable - Tutorial, Lars Vogel, http://www.vogella.com/tutorials/AndroidParcelable/article.html
+Android Date Time Picker Dialog, 2018,  ANUPAM CHUGH, https://www.journaldev.com/9976/android-date-time-picker-dialog
+
+Understanding Androids Parcelable - Tutorial, Lars Vogel, 2017, http://www.vogella.com/tutorials/AndroidParcelable/article.html
+
 https://developer.android.com/reference/android/app/AlertDialog

@@ -1,3 +1,9 @@
+/*
+
+Parcelable code based on Understanding Androids Parcelable - Tutorial, Lars Vogel,
+http://www.vogella.com/tutorials/AndroidParcelable/article.html
+ */
+
 package com.assign1.rfurrer.feelsbook.feeling;
 
 
@@ -13,7 +19,7 @@ import java.util.Date;
 import java.util.Locale;
 
 
-//TODO credit http://www.vogella.com/tutorials/AndroidParcelable/article.html
+//
 public abstract class Mood implements Comparable<Mood>, Parcelable {
     static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss",
             Locale.getDefault());

@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.Locale;
 
 
-public class Mood implements Comparable<Mood> {
+public abstract class Mood implements Comparable<Mood> {
     static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
     private Date date;
     private Comment comment;

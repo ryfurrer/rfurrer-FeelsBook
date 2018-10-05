@@ -19,7 +19,7 @@ public class Joy extends Mood{
 
     @Override
     public String toString(){
-        return super.toString() +" " + this.format();
+        return super.toString() + " " + this.format();
     }
 
 

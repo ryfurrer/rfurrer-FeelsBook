@@ -14,9 +14,13 @@ public class Comment  {
         this.message = "";
     }
 
-    public Comment(String message) {
-        this.date = new Date();
-        this.message = message;
+    public Comment(String message) throws CommentTooLongException {
+        if (message.length() <= this.MAX_CHARS ) {
+            this.date = new Date();
+            this.message = message;
+        } else {
+            throw new CommentTooLongException();
+        }
     }
 
     public String getMessage() {

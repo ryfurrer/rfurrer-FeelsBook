@@ -58,4 +58,10 @@
         android:layout_height="wrap_content"
         android:text="@string/surprise" />
 
+    <Button
+        android:id="@+id/statsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/stats" />
+
 </LinearLayout>

@@ -28,25 +28,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="textCapCharacters|textPersonName"
-        android:text="@string/comment_hint"
+        android:hint="@string/comment_hint"
+        android:inputType="text|textCapCharacters|textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtComment"
-        app:layout_constraintTop_toBottomOf="@+id/editDate" />
-
-    <EditText
-        android:id="@+id/editDate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:inputType="date"
-        android:text="@string/date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtComment"
-        app:layout_constraintTop_toBottomOf="@+id/feelingTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/btnDate" />
 
     <Button
         android:id="@+id/deleteMood"
@@ -73,14 +59,14 @@
         app:layout_constraintTop_toBottomOf="@+id/editComment" />
 
     <TextView
-        android:id="@+id/txtDate"
+        android:id="@+id/txtDateLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/date"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editDate" />
+        app:layout_constraintTop_toBottomOf="@+id/feelingTitle" />
 
     <TextView
         android:id="@+id/txtComment"
@@ -90,5 +76,48 @@
         android:layout_marginTop="8dp"
         android:text="@string/comment"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDate" />
+        app:layout_constraintTop_toBottomOf="@+id/btnDate" />
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/date"
+        app:layout_constraintStart_toEndOf="@+id/txtDateLabel"
+        app:layout_constraintTop_toBottomOf="@+id/feelingTitle" />
+
+    <Button
+        android:id="@+id/btnDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/date"
+        app:layout_constraintEnd_toStartOf="@+id/btnTime"
+        app:layout_constraintStart_toEndOf="@+id/txtDate"
+        app:layout_constraintTop_toBottomOf="@+id/feelingTitle" />
+
+    <Button
+        android:id="@+id/btnTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feelingTitle" />
+
+    <TextView
+        android:id="@+id/txtTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/time"
+        app:layout_constraintStart_toEndOf="@+id/txtDateLabel"
+        app:layout_constraintTop_toBottomOf="@+id/txtDate" />
+
 </android.support.constraint.ConstraintLayout>

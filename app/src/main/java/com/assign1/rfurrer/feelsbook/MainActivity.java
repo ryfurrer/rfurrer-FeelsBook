@@ -1,5 +1,7 @@
 package com.assign1.rfurrer.feelsbook;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.assign1.rfurrer.feelsbook.adapters.FeelingListAdapter;
 import com.assign1.rfurrer.feelsbook.feeling.Anger;
@@ -25,6 +28,8 @@ import com.assign1.rfurrer.feelsbook.feeling.Surprise;
 
 import java.util.ArrayList;
 
+
+//todo cite https://developer.android.com/reference/android/app/AlertDialog
 public class MainActivity extends AppCompatActivity {
 
     private FeelingsList feelings = new FeelingsList();
@@ -64,15 +69,14 @@ public class MainActivity extends AppCompatActivity {
         Button angerButton = findViewById(R.id.angerButton);
         Button loveButton = findViewById(R.id.loveButton);
         Button supriseButton = findViewById(R.id.supriseButton);
+        Button statsButton = findViewById(R.id.statsButton);
 
         joyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("Adapter", ""+feelingsAdapter.getCount());
                 feelings.add(new Joy());
                 FeelingsPreferencesManager.saveFeelings(getApplicationContext(), feelings);
                 feelingsAdapter.notifyDataSetChanged();
-                Log.d("Adapter", ""+feelingsAdapter.getCount());
             }
         });
         sadButton.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +111,20 @@ public class MainActivity extends AppCompatActivity {
                 FeelingsPreferencesManager.saveFeelings(getApplicationContext(), feelings);
             }
         });
+        statsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog alertDialog = new AlertDialog.Builder(
+                        MainActivity.this).create();
+
+                alertDialog.setTitle(R.string.stats);
+
+                alertDialog.setMessage(feelings.printStats());
+
+                alertDialog.show();
+            }
+        });
+
         supriseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -140,18 +158,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void onActivityResult (int requestCode, int resultCode, Intent intent) {
-        Log.d("newContent", "onActivityResult");
         Bundle data = intent.getExtras();
         if(requestCode == EditFeelingActivity.id) {
             Mood mood = data.getParcelable("mood");
             int position = data.getInt("position");
+            feelings.remove(position);
 
-            if(data.getBoolean("isDelete")){
-                Log.d("Delete:", ""+feelings.size());
-                feelings.remove(position);
-                Log.d("Delete:", ""+feelings.size());
-            } else {
-                feelings.set(position, mood);
+            if(!data.getBoolean("isDelete")){
+                Log.d(mood.getTimeAsString(), "onActivityResult: " + mood.toString());
+                feelings.add(mood);
             }
             feelingsAdapter.notifyDataSetChanged();
             FeelingsPreferencesManager.saveFeelings(getApplicationContext(), feelings);

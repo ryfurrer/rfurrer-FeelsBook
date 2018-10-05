@@ -1,4 +1,11 @@
 /*
+Each class must contain comments describing its purpose, design rationale, and any outstanding issues.
+EditFeelingActivity is a screen of the app. It has a view and controllers to display functionality
+for editing moods.
+
+It's purpose is to be the gui for this.
+
+
 Uses date time dialog code from
 Android Date Time Picker Dialog,  ANUPAM CHUGH,
 https://www.journaldev.com/9976/android-date-time-picker-dialog
@@ -133,7 +140,7 @@ public class EditFeelingActivity extends AppCompatActivity {
             }
         });
 
-        //code from https://www.journaldev.com/9976/android-date-time-picker-dialog
+        //code based from https://www.journaldev.com/9976/android-date-time-picker-dialog
         dateButton.setOnClickListener(new View.OnClickListener()  {
             @Override
             public void onClick(View v) {

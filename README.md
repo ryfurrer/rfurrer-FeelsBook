@@ -29,6 +29,8 @@ Assignment part 1 video deliverable link: https://youtu.be/foJ1C_RSjWI
 
 ## References
 lonelyTwitter, Nathan Klapstein, 2018, https://github.com/nklapste/lonelyTwitter
+    Used with permission.
+    This is used to fix the same problem that is in the TA lonelyTwitter parsing.
 
 Android Date Time Picker Dialog, 2018,  ANUPAM CHUGH, https://www.journaldev.com/9976/android-date-time-picker-dialog
 

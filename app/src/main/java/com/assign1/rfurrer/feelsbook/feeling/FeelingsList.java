@@ -1,3 +1,9 @@
+/*
+FeelingsList provides additional functionality to a arraylist of moods.
+
+It handles requirements for lists of moods, like stats.
+ */
+
 package com.assign1.rfurrer.feelsbook.feeling;
 
 import android.util.Log;

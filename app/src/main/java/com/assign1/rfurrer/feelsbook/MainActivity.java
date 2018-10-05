@@ -1,4 +1,10 @@
 /*
+Each class must contain comments describing its purpose, design rationale, and any outstanding issues.
+MainActivity is the main screen of the app. It has a view and controllers to display functionality
+from the FeelingList.
+
+It's purpose is to be the main gui.
+
 
 AlertDialog code based from https://developer.android.com/reference/android/app/AlertDialog
  */

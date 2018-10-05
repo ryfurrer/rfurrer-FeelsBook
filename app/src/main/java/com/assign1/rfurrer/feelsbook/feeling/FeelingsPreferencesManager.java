@@ -1,4 +1,6 @@
 /*
+Each class must contain comments describing its purpose, design rationale, and any outstanding issues.
+This class uses the shared preferences manager to store/load feelingsLists
 
 Adapted from https://github.com/nklapste/lonelyTwitter/blob/9f8f86354105bc7719a90ffa2ab0325e9d369c84/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterPreferencesManager.java
 (Nathan klapstein - lonelyTwitter)

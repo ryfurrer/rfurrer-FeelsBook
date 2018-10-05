@@ -1,4 +1,7 @@
 /*
+This provides serialization for moods so that when fromJson is called to load the feelings, they
+are cast to there proper types.
+
 
 Adapted from https://github.com/nklapste/lonelyTwitter/blob/9f8f86354105bc7719a90ffa2ab0325e9d369c84/app/src/main/java/ca/ualberta/cs/lonelytwitter/TweetSerializer.java
 (Nathan klapstein - lonelyTwitter)

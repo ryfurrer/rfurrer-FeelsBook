@@ -1,4 +1,6 @@
 /*
+Each class must contain comments describing its purpose, design rationale, and any outstanding issues.
+This is a class designed to update the list view of feelings.
 
 Adapted from https://github.com/nklapste/lonelyTwitter/blob/feature/lab4/app/src/main/java/ca/ualberta/cs/lonelytwitter/TweetAdapter.java
 (Nathan klapstein - lonelyTwitter)

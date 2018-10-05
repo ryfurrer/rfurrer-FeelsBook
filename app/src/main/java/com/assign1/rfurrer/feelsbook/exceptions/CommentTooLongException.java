@@ -1,4 +1,4 @@
-package com.assign1.rfurrer.feelsbook.comments;
+package com.assign1.rfurrer.feelsbook.exceptions;
 
 public class CommentTooLongException extends Exception {
 

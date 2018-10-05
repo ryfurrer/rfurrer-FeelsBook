@@ -1,9 +1,11 @@
 package com.assign1.rfurrer.feelsbook;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +14,7 @@ import android.widget.ListView;
 import com.assign1.rfurrer.feelsbook.adapters.FeelingListAdapter;
 import com.assign1.rfurrer.feelsbook.feeling.Anger;
 import com.assign1.rfurrer.feelsbook.feeling.Fear;
+import com.assign1.rfurrer.feelsbook.feeling.FeelingSerializer;
 import com.assign1.rfurrer.feelsbook.feeling.FeelingsList;
 import com.assign1.rfurrer.feelsbook.feeling.FeelingsPreferencesManager;
 import com.assign1.rfurrer.feelsbook.feeling.Joy;
@@ -34,10 +37,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         feelings_list = (ListView) findViewById(R.id.feelings_list);
-        feelingsAdapter = new FeelingListAdapter(this, R.layout.list_item, feelings);
-        feelings_list.setAdapter(feelingsAdapter);
 
-        //feelings_list.setOnItemClickListener
+        feelings_list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Mood mood = feelings.get(position);
+
+                Intent intent = new Intent(MainActivity.this, EditFeelingActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("position", position);
+                bundle.putParcelable("mood", mood);
+                intent.putExtras(bundle);
+                startActivityForResult(intent, EditFeelingActivity.id);
+            }
+        });
 
         setupButtons();
     }
@@ -107,13 +120,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        feelings = FeelingsPreferencesManager.loadFeelings(getApplicationContext());
         feelingsAdapter = new FeelingListAdapter(this, R.layout.list_item, feelings);
         feelings_list.setAdapter(feelingsAdapter);
-        feelings = FeelingsPreferencesManager.loadFeelings(getApplicationContext());
         for (int i = 0; i < feelings.size(); i++) {
             Log.d("Mood:", feelings.get(i).getClass().getName());
         }
-        feelingsAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -125,5 +137,24 @@ public class MainActivity extends AppCompatActivity {
         feelings = new FeelingsList();
         feelingsAdapter.notifyDataSetChanged();
         FeelingsPreferencesManager.saveFeelings(getApplicationContext(), feelings);
+    }
+
+    protected void onActivityResult (int requestCode, int resultCode, Intent intent) {
+        Log.d("newContent", "onActivityResult");
+        Bundle data = intent.getExtras();
+        if(requestCode == EditFeelingActivity.id) {
+            Mood mood = data.getParcelable("mood");
+            int position = data.getInt("position");
+
+            if(data.getBoolean("isDelete")){
+                Log.d("Delete:", ""+feelings.size());
+                feelings.remove(position);
+                Log.d("Delete:", ""+feelings.size());
+            } else {
+                feelings.set(position, mood);
+            }
+            feelingsAdapter.notifyDataSetChanged();
+            FeelingsPreferencesManager.saveFeelings(getApplicationContext(), feelings);
+        }
     }
 }

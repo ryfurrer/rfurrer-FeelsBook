@@ -18,9 +18,9 @@ public class FeelingSerializer implements JsonSerializer<Mood>, JsonDeserializer
 
     /**
      * @param json    The Json data being deserialized
-     * @param typeOfT The type of the Object to deserialize to
+     * @param typeOfT not used
      * @param context
-     * @return a deserialized object of the specified type typeOfT which is a subclass of {@code T}
+     * @return a deserialized object which is a subclass of {@code Mood}
      * @throws JsonParseException if json is not in the expected format of {@code typeofT}
      * @see {@code Mood}
      * @see com.google.gson.JsonDeserializer

@@ -7,8 +7,7 @@
     <string name="joy">Joy</string>
     <string name="love">Love</string>
     <string name="fear">Fear</string>
-    <string name="delete">Delete</string>
-    <string name="comment">Add Comment</string>
+    <string name="comment">Comment</string>
     <string name="comment_hint">Enter your comment here</string>
     <string name="add_feeling">Add Feeling</string>
     <string name="edit_feeling">Edit Feeling</string>
@@ -18,4 +17,6 @@
     <string name="cancel">Cancel</string>
     <string name="edit">Edit</string>
     <string name="clear">Clear</string>
+    <string name="delete">Delete</string>
+    <string name="save">Save</string>
 </resources>
